@@ -6,10 +6,12 @@ public class Detector {
     private final String id;
     private final Location location;
     private final Instant runningSince;
+    private final DetectorConfig config;
 
-    public Detector(final String id, final Location location) {
+    public Detector(final String id, final Location location, final DetectorConfig config) {
         this.id = id;
         this.location = location;
+        this.config = config;
         this.runningSince = Instant.now();
     }
 
@@ -23,5 +25,9 @@ public class Detector {
 
     public Instant getRunningSince() {
         return runningSince;
+    }
+
+    public DetectorConfig getConfig() {
+        return config;
     }
 }
