@@ -5,29 +5,23 @@ import java.util.UUID;
 
 public class Detection {
     private final String id;
-    private final double velocity;
-    private final byte[] image;
+    private final Vehicle vehicle;
     private final Instant timestamp;
     private final Detector detector;
 
-    public Detection(final double velocity, final byte[] image, final Detector detector) {
-        this.velocity = velocity;
-        this.image = image;
+    public Detection(final Vehicle vehicle, final Detector detector) {
+        this.vehicle = vehicle;
         this.detector = detector;
         this.timestamp = Instant.now();
         this.id = String.format("%s-%s", detector.getId(), UUID.randomUUID().toString());
-    }
-
-    public double getVelocity() {
-        return velocity;
     }
 
     public String getId() {
         return id;
     }
 
-    public byte[] getImage() {
-        return image;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
     public Instant getTimestamp() {
