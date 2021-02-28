@@ -1,4 +1,4 @@
-package com.github.leosilvadev.vehicle_detector.services;
+package com.github.leosilvadev.vehicle_detector.services.notification;
 
 import com.github.leosilvadev.vehicle_detector.config.KafkaConfigMapBuilder;
 import com.github.leosilvadev.vehicle_detector.domains.Detection;

@@ -2,13 +2,13 @@ package com.github.leosilvadev.vehicle_detector.domains;
 
 import java.time.Instant;
 
-public class Detector {
+public class DetectorMachine {
     private final String id;
     private final Location location;
     private final Instant runningSince;
-    private final DetectorConfig config;
+    private final DetectorMachineConfig config;
 
-    public Detector(final String id, final Location location, final DetectorConfig config) {
+    public DetectorMachine(final String id, final Location location, final DetectorMachineConfig config) {
         this.id = id;
         this.location = location;
         this.config = config;
@@ -27,7 +27,7 @@ public class Detector {
         return runningSince;
     }
 
-    public DetectorConfig getConfig() {
+    public DetectorMachineConfig getConfig() {
         return config;
     }
 }

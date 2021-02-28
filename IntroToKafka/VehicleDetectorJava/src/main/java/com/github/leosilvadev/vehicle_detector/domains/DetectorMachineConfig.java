@@ -1,9 +1,9 @@
 package com.github.leosilvadev.vehicle_detector.domains;
 
-public class DetectorConfig {
+public class DetectorMachineConfig {
     private final double maxVelocity;
 
-    public DetectorConfig(final double maxVelocity) {
+    public DetectorMachineConfig(final double maxVelocity) {
         this.maxVelocity = maxVelocity;
     }
 

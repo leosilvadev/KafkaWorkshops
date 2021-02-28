@@ -7,9 +7,9 @@ public class Detection {
     private final String id;
     private final Vehicle vehicle;
     private final Instant timestamp;
-    private final Detector detector;
+    private final DetectorMachine detector;
 
-    public Detection(final Vehicle vehicle, final Detector detector) {
+    public Detection(final Vehicle vehicle, final DetectorMachine detector) {
         this.vehicle = vehicle;
         this.detector = detector;
         this.timestamp = Instant.now();
@@ -28,7 +28,7 @@ public class Detection {
         return timestamp;
     }
 
-    public Detector getDetector() {
+    public DetectorMachine getDetector() {
         return detector;
     }
 }

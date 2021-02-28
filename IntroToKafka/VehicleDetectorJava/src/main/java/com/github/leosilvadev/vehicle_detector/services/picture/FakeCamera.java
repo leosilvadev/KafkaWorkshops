@@ -1,4 +1,4 @@
-package com.github.leosilvadev.vehicle_detector.services;
+package com.github.leosilvadev.vehicle_detector.services.picture;
 
 import java.util.Random;
 
