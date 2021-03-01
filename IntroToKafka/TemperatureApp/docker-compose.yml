@@ -38,3 +38,19 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+
+  temperature-akhq:
+    image: tchiotludo/akhq
+    hostname: temperature-akhq
+    container_name: temperature-akhq
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "temperature-broker:29092"
+    ports:
+      - 9000:8080
+    depends_on:
+      - temperature-broker
