@@ -46,7 +46,6 @@ public class MainProducer {
         */
 
         final var producer = new KafkaProducer<String, Double>(config);
-        final var counter = new AtomicInteger(0);
         while (true) {
             producer.send(new ProducerRecord<>("temperatures", sensorId, random.nextDouble() + random.nextInt(30)));
             waitFor(50L);
