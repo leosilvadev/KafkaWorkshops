@@ -2,3 +2,4 @@
 *.log
 .gradle/
 .idea/
+node_modules/
