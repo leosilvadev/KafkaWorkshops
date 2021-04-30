@@ -14,3 +14,21 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+task runClass(type: Exec) {
+    if (!project.hasProperty('mode')) {
+        throw new IllegalArgumentException('Invalid class to run')
+    }
+
+    def mode = project.getProperty('mode')
+    if (mode == 'producer') {
+        ext.runClass = 'com.github.leosilvadev.temperature_producer.MainProducer'
+    } else {
+        throw new IllegalArgumentException("Invalid class to run: $mode")
+    }
+
+    dependsOn build
+    group = "Execution"
+    description = "Run the main class with ExecTask"
+    commandLine "java", "-classpath", sourceSets.main.runtimeClasspath.getAsPath(), ext.runClass
+}
