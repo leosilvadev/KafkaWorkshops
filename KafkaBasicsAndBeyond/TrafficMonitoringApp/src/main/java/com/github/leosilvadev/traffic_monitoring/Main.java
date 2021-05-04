@@ -10,7 +10,16 @@ import java.util.Properties;
 import java.util.UUID;
 
 public class Main {
-
+    
+    /**
+    * - A Detector may not have good internet every time (it may oscile)
+    * - Detection rate may be high, depending on the place it is running
+    * - Order is very important (a detection may be used for many things)
+    * - Data loss is not acceptable
+    * - Data duplication should be avoided if possible
+    * - Data must be available for at least a month
+    * - Consumption of detections is going to be high
+    */
     public static void main(final String[] args) {
         final var detector = new Detector(UUID.randomUUID().toString());
         final var mapper = new ObjectMapper();
