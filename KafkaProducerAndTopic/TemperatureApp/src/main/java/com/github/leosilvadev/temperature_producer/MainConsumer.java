@@ -2,6 +2,7 @@ package com.github.leosilvadev.temperature_producer;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.security.auth.SecurityProtocol;
 import org.apache.kafka.common.serialization.DoubleDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -23,6 +24,7 @@ public class MainConsumer {
         config.put(ConsumerConfig.GROUP_ID_CONFIG, "sensors-central");
 
         final var consumer = new KafkaConsumer<String, Double>(config);
+
         consumer.subscribe(singletonList("temperatures"));
         while (true) {
             consumer.poll(Duration.ofSeconds(10)).forEach(record -> {

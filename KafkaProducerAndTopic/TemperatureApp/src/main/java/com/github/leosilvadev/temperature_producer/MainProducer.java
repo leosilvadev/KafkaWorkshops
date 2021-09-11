@@ -6,6 +6,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.DoubleSerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
 import java.util.UUID;
@@ -46,7 +47,7 @@ public class MainProducer {
 
         final var producer = new KafkaProducer<String, Double>(config);
         while (true) {
-            producer.send(new ProducerRecord<>("temperatures", sensorId, random.nextDouble() + random.nextInt(30)));
+            producer.send(new ProducerRecord<>("cities.berlin.temperatures", sensorId, random.nextDouble() + random.nextInt(30)));
             waitFor(50L);
         }
 

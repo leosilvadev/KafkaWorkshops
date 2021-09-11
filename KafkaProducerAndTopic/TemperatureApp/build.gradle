@@ -16,11 +16,7 @@ dependencies {
 }
 
 task runClass(type: Exec) {
-    if (!project.hasProperty('mode')) {
-        throw new IllegalArgumentException('Invalid class to run')
-    }
-
-    def mode = project.getProperty('mode')
+    def mode = project.hasProperty('mode') ? project.getProperty('mode') : 'producer'
     if (mode == 'producer') {
         ext.runClass = 'com.github.leosilvadev.temperature_producer.MainProducer'
     } else {
